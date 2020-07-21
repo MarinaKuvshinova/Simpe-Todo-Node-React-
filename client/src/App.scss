@@ -1,0 +1,162 @@
+@mixin alignCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html, body {
+  min-height: 100vh;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font: 16px/22px Arial, Helvetica, sans-serif;
+  min-width: 320px;
+}
+#root {
+  min-height: 100vh;
+}
+.App {
+  min-height: 100vh;
+  background: #cfe7fa;
+  background: -moz-linear-gradient(-45deg,  #cfe7fa 0%, #6393c1 100%);
+  background: -webkit-linear-gradient(-45deg,  #cfe7fa 0%,#6393c1 100%);
+  background: linear-gradient(135deg,  #cfe7fa 0%,#6393c1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfe7fa', endColorstr='#6393c1',GradientType=1 );
+  @include alignCenter;
+}
+.tasks {
+  max-width: 600px;
+  width: 90%;
+  &__heading {
+    @include alignCenter;
+    justify-content: space-between;
+    margin: 0 0 20px;
+    h1 {
+      margin: 0;
+      font-size: 1.7em;
+      text-align: center;
+    }
+  }
+  button {
+    margin: 0 0 0 5px;
+    outline: none !important;
+    cursor: pointer;
+    border-radius: 2px;
+    background: #6393c1;
+    border: 0;
+    padding: 0;
+    color: #cfe7fa;
+    width: 30px;
+    height: 30px;
+    @include alignCenter;
+
+    &:disabled {
+      cursor: auto;
+      opacity: .5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      opacity: .8;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__create {
+    background: #fff;
+    border-radius: 5px;
+    margin: 0 0 20px;
+    padding: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    button {
+      width: 90px;
+      font-weight: normal;
+      svg {
+        margin: 0 5px 0 0;
+      }
+    }
+
+    input, textarea {
+      box-sizing: border-box;
+      border-radius: 5px;
+      margin: 0;
+      padding: 0 5px;
+      outline: none;
+      flex: 1 0 auto;
+      border: 1px solid #000;
+      align-self: stretch;
+    }
+
+    &__commit {
+      width: 100%;
+      > * {
+        font-size: .8em;
+        width: 100%;
+        display: block;
+      }
+      textarea {
+        height: 60px;
+        max-height: 60px;
+        resize: none;
+      }
+    }
+
+
+
+  }
+
+  &__row {
+    background: #fff;
+    border-radius: 5px;
+    margin: 0 0 5px;
+    padding: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &__text {
+      font-weight: bold;
+    }
+
+    &__button {
+      display: flex;
+
+
+    }
+    &__commit {
+      width: 100%;
+      font-size: .8em;
+      opacity: .6;
+      > span {
+        font-size: 1em;
+        display: block;
+        font-weight: bold;
+        margin: 10px 0 0;
+      }
+    }
+    &__input {
+      margin: 0;
+      padding: 0 0 0 10px;
+      font-size: 1em;
+      font-weight: bold;
+      flex: 1 0 auto;
+      align-self: stretch;
+    }
+  }
+}
+
